@@ -5,7 +5,7 @@ import torchvision.utils as vutils
 def main():
     
     parser = argparse.ArgumentParser(description='Test Cartoon avatar Gan model')
-    parser.add_argument('--model_root', default='pretrained model/', help='Root directory for models')
+    parser.add_argument('--model_root', default='pretrained_model/', help='Root directory for models')
     parser.add_argument('--model_name', default='', help='Model G name')
     parser.add_argument('--nz', default=100, type = int , help='Size of generator input')
     opt = parser.parse_args()
@@ -13,7 +13,7 @@ def main():
     model_root = opt.model_root
     model_name = opt.model_name
     nz = opt.nz
-    
+
     netG = Generator()
     netG.load_state_dict(torch.load(model_root + model_name))
 

@@ -175,8 +175,8 @@ def main():
             # Output training stats
             if i % 50 == 0:
                     # Save model data
-                torch.save(netG.state_dict(), 'netG_epoch_%d.pth' % (iters))
-                torch.save(netD.state_dict(), 'netD_epoch_%d.pth' % (iters))
+                torch.save(netG.state_dict(), 'pretrained_model/netG_epoch_%d.pth' % (iters))
+                torch.save(netD.state_dict(), 'pretrained_model/netD_epoch_%d.pth' % (iters))
                     # Print training stats
                 print('[%d/%d][%d/%d]\tLoss_D: %.4f\tLoss_G: %.4f\tD(x): %.4f\tD(G(z)): %.4f / %.4f'
                       % (epoch, num_epochs, i, len(dataloader),
